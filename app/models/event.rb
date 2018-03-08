@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  attr_accessible :address_line_1, :address_line_2, :attending, :city, :description, :event_date, :event_time, :name, :phone, :postcode, :scope, :venue, :lat_long, :latitude, :longitude
+  attr_accessor :address_line_1, :address_line_2, :attending, :city, :description, :event_date, :event_time, :name, :phone, :postcode, :scope, :venue, :lat_long, :latitude, :longitude
 
   geocoded_by :postcode
   after_validation :geocode   # auto-fetch coordinates - background work by Rubygem 'geocoder'

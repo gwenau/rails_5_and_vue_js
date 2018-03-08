@@ -8,11 +8,9 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Database, authentication and authorisation
-# gem 'pg' # put pg on hold because devise needs to work with sqlite3 at installation
+gem 'pg' 
 gem 'devise'
 gem 'cancan'
 
@@ -27,6 +25,10 @@ gem 'geocoder'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+
+# Front-end / Assets
+# The gon gem helps Ruby/Rails intepret JavaScript
+gem 'gon'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
