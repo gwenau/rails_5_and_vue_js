@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308050112) do
+ActiveRecord::Schema.define(version: 20180308060943) do
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.date "event_date"
+    t.datetime "event_time"
+    t.string "attending"
+    t.string "venue"
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "city"
+    t.string "postcode"
+    t.string "phone"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,6 +47,25 @@ ActiveRecord::Schema.define(version: 20180308050112) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "image"
+    t.date "dob"
+    t.string "mobile"
+    t.string "role"
+    t.string "github"
+    t.string "linkedin"
+    t.string "facebook"
+    t.string "twitter"
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "city"
+    t.string "postcode"
+    t.string "cancan_role"
+    t.string "provider"
+    t.string "uid"
+    t.string "personal_website"
+    t.string "display"
+    t.string "facebook_token"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
