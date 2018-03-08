@@ -5,10 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,  :omniauthable, :omniauth_providers => [:google_oauth2, :github, :facebook, :linkedin]#, :confirmable, :timeoutable,  :confirm_within => 10.minute
 
-  belongs_to :group
-  has_many :messages
   has_and_belongs_to_many :events, :join_table => "events_users"
-  belongs_to :chat
   has_many :authentications
 
   # In order to activate the ability model properly.
