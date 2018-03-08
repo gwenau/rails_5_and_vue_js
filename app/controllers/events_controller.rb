@@ -43,7 +43,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(params[:event])
+    @event = Event.new(event_params)
 
     respond_to do |format|
       if @event.save
@@ -55,6 +55,8 @@ class EventsController < ApplicationController
       end
     end
   end
+
+
 
   # PUT /events/1
   # PUT /events/1.json
@@ -96,4 +98,9 @@ class EventsController < ApplicationController
     @event.save
   end
 
+  private
+  def event_params
+    params.require(:event).permit(
+      :address_line_1, :address_line_2, :attending, :city, :description, :event_date, :event_time, :name, :phone, :postcode, :scope, :venue, :lat_long, :latitude, :longitude)
+  end
 end
