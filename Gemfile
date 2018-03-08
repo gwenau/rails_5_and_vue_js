@@ -17,8 +17,9 @@ gem 'devise'
 gem 'cancan'
 
 # Third party authentication
-gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin-oauth2'
 
 # Use Puma as the app server
