@@ -1,0 +1,82 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :event_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :event_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_date %>
+    <%= form.date_select :event_date, id: :event_event_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_time %>
+    <%= form.datetime_select :event_time, id: :event_event_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attending %>
+    <%= form.text_field :attending, id: :event_attending %>
+  </div>
+
+  <div class="field">
+    <%= form.label :venue %>
+    <%= form.text_field :venue, id: :event_venue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_line_1 %>
+    <%= form.text_field :address_line_1, id: :event_address_line_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_line_2 %>
+    <%= form.text_field :address_line_2, id: :event_address_line_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :event_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postcode %>
+    <%= form.text_field :postcode, id: :event_postcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :event_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :event_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :event_longitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

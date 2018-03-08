@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  event_date: 2018-03-08
+  event_time: 2018-03-08 16:49:57
+  attending: MyString
+  venue: MyString
+  address_line_1: MyString
+  address_line_2: MyString
+  city: MyString
+  postcode: MyString
+  phone: MyString
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  name: MyString
+  description: MyText
+  event_date: 2018-03-08
+  event_time: 2018-03-08 16:49:57
+  attending: MyString
+  venue: MyString
+  address_line_1: MyString
+  address_line_2: MyString
+  city: MyString
+  postcode: MyString
+  phone: MyString
+  latitude: 1.5
+  longitude: 1.5
