@@ -4,8 +4,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,  :omniauthable, :omniauth_providers => [:google_oauth2, :github, :facebook, :linkedin]#, :confirmable, :timeoutable,  :confirm_within => 10.minute
-
-  attr_accessor :email, :password, :password_confirmation, :remember_me, :name, :image, :dob, :mobile, :role, :cancan_role, :github, :linkedin, :facebook, :twitter, :address_line_1, :address_line_2, :city, :postcode, :provider, :uid, :personal_website, :display, :facebook_token
   
   validates :email, :uniqueness => {:allow_blank => true}
 

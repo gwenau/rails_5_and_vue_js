@@ -2,31 +2,45 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the passed in user here. For example:
-    #
-    #   user ||= User.new # guest user (not logged in)
-    #   if user.admin?
-    #     can :manage, :all
-    #   else
-    #     can :read, :all
-    #   end
-    #
-    # The first argument to `can` is the action you are giving the user
-    # permission to do.
-    # If you pass :manage it will apply to every action. Other common actions
-    # here are :read, :create, :update and :destroy.
-    #
-    # The second argument is the resource the user can perform the action on.
-    # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-    # class of the resource.
-    #
-    # The third argument is an optional hash of conditions to further filter the
-    # objects.
-    # For example, here the user can only update published articles.
-    #
-    #   can :update, Article, :published => true
-    #
-    # See the wiki for details:
-    # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+    user ||= User.new
+    if user.role? :admin
+      can :manage, :all
+    elsif user.role? :member
+      can :read, :all
+      can :create, User
+      can :update, User do |user_ability|
+        user_ability.id == user.id
+      end
+      can :create, Event 
+      can :update, Event do |event| 
+            event.user == user
+          end
+      can :delete, Event do |event|
+            event.try(:user) == user
+            end
+      can :create, Group
+      can :update, Group do |group|
+            group.user_id == user.id 
+            end
+      can :delete, Group do |group|
+            group.try(:user) == user
+            end
+      can :create, Chat 
+      can :update, Chat do |chat| 
+            chat.user == user
+          end
+      can :delete, Chat do |chat|
+            chat.try(:user) == user
+            end
+      can :create, Message 
+      can :update, Message do |message| 
+            message.user == user
+          end
+      can :delete, Message do |message|
+            message.try(:user) == user
+            end
+    else
+      can :read, :all
+    end
   end
 end

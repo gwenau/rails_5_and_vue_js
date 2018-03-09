@@ -9,10 +9,10 @@
 Event.all.each {|x| x.destroy}
 User.all.each {|x| x.destroy}
 
-e1 = Event.create(name: "Graduation", scope: "private", venue: "TBA, somewhere in hackney", city: "London", postcode: "
-E8 1BD", lat_long: "[51.544543, -0.0643581]")
-e2 = Event.create(name: "Codebar", scope: "public", venue: "Pivotal Labs", address_line_1: "Bentima House", address_line_2: "168-172 Old Street", city: "London", postcode: "EC1V 9BP", lat_long: "[51.525026, -0.090486]")
-e3 = Event.create(name: "Friday nights at the Gunmakers", scope: "public", address_line_1: "13 Eyre Street Hill", city: "London", postcode: "EC1R 5ET", lat_long: "[51.522563, -0.110554]")
+e1 = Event.create(name: "Graduation", venue: "TBA, somewhere in hackney", city: "London", postcode: "
+E8 1BD", latitude: 51.544543, longitude: -0.0643581)
+e2 = Event.create(name: "Codebar", venue: "Pivotal Labs", address_line_1: "Bentima House", address_line_2: "168-172 Old Street", city: "London", postcode: "EC1V 9BP", latitude: 51.525026, longitude: -0.090486)
+e3 = Event.create(name: "Friday nights at the Gunmakers", address_line_1: "13 Eyre Street Hill", city: "London", postcode: "EC1R 5ET", latitude: 51.522563, longitude: -0.110554)
 
 u1 = User.create(name: "Gwen Au", image: "http://m.c.lnkd.licdn.com/mpr/pub/image-qLGKpibHtp_OUipSn1gv69qpNTGHqlYWqSgB6K3KNWIetQMsqLGBJMVHNgeptSTQyCmK/gwen-au.jpg", email: "quyen_au@hotmail.com", github: "gwenau", linkedin: "http://au.linkedin.com/pub/gwen-au/45/266/a89", postcode: "NW1 0LE", password: "password", role: "admin")
 u2 = User.create(name: "Toby Merlet", image: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/v/t1.0-1/c14.8.172.172/s160x160/539747_10151479855865228_1160094468_n.jpg?oh=57537df4a356fbab7b9c84346fe7f8bc&oe=5491F704&__gda__=1419728927_a3ac85623b61ea10c62746c20aa44501",github: "tmerlet", linkedin: "http://www.linkedin.com/pub/toby-merlet/22/a07/918", password: "password", email: "tmerlet@gmail.com", role: "member")
