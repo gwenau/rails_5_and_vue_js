@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     post 'attend', on: :member
     delete 'not_going', on: :member
   end
+  
   resources :users, except: :create do
     get 'page/:page', action: :index, on: :collection
   end
