@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :email, :uniqueness => {:allow_blank => true}
 
   has_and_belongs_to_many :events, :join_table => "events_users"
-  has_many :authentications
+  # has_many :authentications
 
   # In order to activate the ability model properly.
   def role?(role)

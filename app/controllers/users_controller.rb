@@ -4,9 +4,9 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     # Pagination
-    @users = User.order(:created_at).page(params[:page])
+    # @users = User.order(:created_at).page(params[:page])
     # Default rails index.
-    # @users = User.all
+    @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
